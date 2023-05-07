@@ -1,6 +1,6 @@
 ﻿using AsyncAwait.Task2.CodeReviewChallenge.Extensions;
-using AsyncAwait.Task2.CodeReviewChallenge.Models.Support;
-using AsyncAwait.Task2.CodeReviewChallenge.Services;
+using AsyncAwait.Task2.CodeReviewChallenge.Services.Privacy;
+using AsyncAwait.Task2.CodeReviewChallenge.Services.Support;
 using CloudServices;
 using CloudServices.Interfaces;
 using Microsoft.AspNetCore.Builder;
@@ -17,7 +17,6 @@ public class Startup
     {
         Configuration = configuration;
     }
-
     public IConfiguration Configuration { get; }
 
     // This method gets called by the runtime. Use this method to add services to the container.
@@ -33,7 +32,7 @@ public class Startup
         services.AddSingleton<IStatisticService, CloudStatisticService>();
         services.AddSingleton<ISupportService, CloudSupportService>();
         services.AddSingleton<IPrivacyDataService, PrivacyDataService>();
-        services.AddScoped<IAssistant, ManualAssistant>();
+        services.AddScoped<IAssistanceService, ManualAssistanceService>();
 
         services.AddMvc(options => options.EnableEndpointRouting = false);
     }

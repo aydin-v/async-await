@@ -1,6 +1,7 @@
-﻿namespace AsyncAwait.Task2.CodeReviewChallenge.Headers;
-
-public class CustomHttpHeaders
+﻿namespace AsyncAwait.Task2.CodeReviewChallenge.Headers
 {
-    public const string TotalPageVisits = "TotalPageVisits";
+    public class CustomHttpHeaders
+    {
+        public const string TotalPageVisits = "TotalPageVisits";
+    }
 }
